@@ -1,0 +1,19 @@
+import string
+
+def contar_palabras(archivo):
+    contador = {}
+    with open(archivo, 'r') as f:
+        for linea in f:
+            linea = linea.strip().translate(str.maketrans('', '', string.punctuation)).lower()
+            palabras = linea.split()
+            for palabra in palabras:
+                if palabra not in contador:
+                    contador[palabra] = 1
+                else:
+                    contador[palabra] += 1
+    return contador
+
+archivo = 'texto.txt'
+palabras = contar_palabras(archivo)
+for palabra, contador in palabras.items():
+    print(palabra, contador)
