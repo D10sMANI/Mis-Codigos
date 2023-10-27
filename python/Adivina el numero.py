@@ -1,3 +1,4 @@
+#H Hola
 import random
 
 # Genera un número aleatorio entre 1 y 100
